@@ -1,0 +1,7 @@
+{{ range $container := $ }}
+  {{ range $key, $value := $container.Labels }}
+    {{ if eq $key "advertiser.host" }}
+{{ $value }}
+    {{ end }}
+  {{ end }}
+{{ end }}

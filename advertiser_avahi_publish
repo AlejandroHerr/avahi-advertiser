@@ -1,0 +1,5 @@
+#!/bin/sh
+
+IP=$(ip route get 1.2.3.4 | awk '{print $7}')
+
+parallel -j 100 --verbose avahi-publish -va -R {} ${IP} </etc/advertiser/advertiser_hosts

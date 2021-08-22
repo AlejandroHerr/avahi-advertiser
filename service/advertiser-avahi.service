@@ -1,0 +1,13 @@
+[Unit]
+Description=Advertisable docker containers
+# Requires=advertiser-docker-gen.service
+# After=advertiser-docker-gen.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/advertiser_avahi_publish
+Restart=always
+RestartSec=60
+
+[Install]
+WantedBy=multi-user.target
