@@ -8,6 +8,8 @@ FROM golang:1.16.6 as gobuilder
 # Build docker-gen from scratch
 FROM gobuilder as dockergen
 
+LABEL maintainer="Alejandro Hernández <hola@alejandroherr.io>"
+
 ARG DOCKER_GEN_VERSION
 
 RUN mkdir /etc/docker-gen
